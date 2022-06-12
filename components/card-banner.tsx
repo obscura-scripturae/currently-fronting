@@ -12,6 +12,8 @@ const CardBanner = (props: CardBannerProps) => {
       className='max-h-48 object-cover mx-auto rounded'
       src={`/api/image.webp?id=${id}&type=${type}&image=banner&width=1100&height=440`}
       alt={`Banner for ${name}`}
+      width={1100}
+      height={440}
     />
   )
 }

@@ -16,6 +16,8 @@ const CardAvatar = (props: CardAvatarProps) => {
       style={{
         borderColor: `#${color}`,
       }}
+      width={256}
+      height={256}
     />
   )
 }
