@@ -1,7 +1,7 @@
 import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import useSWR, { Key } from 'swr'
+import useSWR from 'swr'
 import Card from '../components/card'
 import { Switch, System } from '../util/types'
 
