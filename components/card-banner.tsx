@@ -10,10 +10,10 @@ const CardBanner = (props: CardBannerProps) => {
   return (
     <img
       className='max-h-48 object-cover mx-auto rounded'
-      src={`/api/image.webp?id=${id}&type=${type}&image=banner&width=1100&height=440`}
+      src={`/api/image.webp?id=${id}&type=${type}&image=banner&width=600&height=240`}
       alt={`Banner for ${name}`}
-      width={1100}
-      height={440}
+      width={600}
+      height={240}
     />
   )
 }

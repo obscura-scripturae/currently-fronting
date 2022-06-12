@@ -11,13 +11,13 @@ const CardAvatar = (props: CardAvatarProps) => {
   return (
     <img
       className='max-h-48 border-4 object-cover rounded float-left mr-2'
-      src={`/api/image.webp?id=${id}&type=${type}&image=avatar_url&width=256&height=256`}
+      src={`/api/image.webp?id=${id}&type=${type}&image=avatar_url&width=172&height=172`}
       alt={`Avatar for ${name}`}
       style={{
         borderColor: `#${color}`,
       }}
-      width={256}
-      height={256}
+      width={172}
+      height={172}
     />
   )
 }
