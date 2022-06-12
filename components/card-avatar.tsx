@@ -1,18 +1,17 @@
 interface CardAvatarProps {
   name: string
-  avatar_url: string
+  id: string
+  type: string
   color: string
 }
 
 const CardAvatar = (props: CardAvatarProps) => {
-  const { name, avatar_url, color } = props
+  const { name, id, type, color } = props
 
   return (
     <img
       className='max-h-48 border-4 object-cover rounded float-left mr-2'
-      src={`/api/image.webp?url=${encodeURIComponent(
-        avatar_url,
-      )}&width=256&height=256`}
+      src={`/api/image.webp?id=${id}&type=${type}&image=avatar_url&width=256&height=256`}
       alt={`Avatar for ${name}`}
       style={{
         borderColor: `#${color}`,

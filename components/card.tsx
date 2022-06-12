@@ -70,23 +70,25 @@ const Card = (props: CardProps) => {
   return (
     <div className={cardClasses}>
       {member?.banner && (
-        <CardBanner name={member.name} banner={member.banner} />
+        <CardBanner name={member.name} id={member.id} type='members' />
       )}
       {system?.banner && (
-        <CardBanner name={system.name} banner={system.banner} />
+        <CardBanner name={system.name} id={system.id} type='systems' />
       )}
       <div>
         {member?.avatar_url && (
           <CardAvatar
             name={member.name}
-            avatar_url={member.avatar_url}
+            id={member.id}
+            type='members'
             color={member.color}
           />
         )}
         {system?.avatar_url && (
           <CardAvatar
             name={system.name}
-            avatar_url={system.avatar_url}
+            id={system.id}
+            type='systems'
             color={system.color}
           />
         )}

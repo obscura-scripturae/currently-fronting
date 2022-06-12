@@ -4,7 +4,13 @@ import sharp from 'sharp'
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
     try {
-      const initialImage = await fetch(req.query.url as string)
+      const data = await fetch(
+        `https://api.pluralkit.me/v2/${req.query.type as string}/${
+          req.query.id as string
+        }`,
+      )
+      const json = await data.json()
+      const initialImage = await fetch(json[req.query.image as string])
       const initialArrayBuffer = await initialImage.arrayBuffer()
       const initialBuffer = Buffer.from(initialArrayBuffer)
       const resizedBuffer = await sharp(initialBuffer)
