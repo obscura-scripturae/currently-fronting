@@ -14,12 +14,14 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         })
         .toFormat('webp')
         .toBuffer()
-      res.setHeader('Content-Type', 'image/webp').status(200).send(resizedBuffer)
+      res
+        .setHeader('Content-Type', 'image/webp')
+        .status(200)
+        .send(resizedBuffer)
     } catch (error) {
       res.status(500).json({ error: (error as Error).message })
     }
-  }
-  else {
+  } else {
     res.status(405).json({ error: `Method ${req.method} not allowed` })
   }
 }
