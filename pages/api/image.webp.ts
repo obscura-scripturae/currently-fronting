@@ -4,10 +4,10 @@ import sharp from 'sharp'
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
     try {
+      const route =
+        (req.query.route as string) === 'systems' ? 'systems' : 'members'
       const data = await fetch(
-        `https://api.pluralkit.me/v2/${req.query.type as string}/${
-          req.query.id as string
-        }`,
+        `https://api.pluralkit.me/v2/${route}/${req.query.id as string}`,
       )
       const json = await data.json()
       const initialImage = await fetch(json[req.query.image as string])
