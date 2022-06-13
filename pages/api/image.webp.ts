@@ -6,7 +6,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     try {
       const route =
         (req.query.route as string) === 'systems' ? 'systems' : 'members'
-      const id = /[a-z]{5}/.test(req.query.id as string)
+      const id = /^[a-z]{5}$/.test(req.query.id as string)
         ? (req.query.id as string)
         : null
       if (!id) {
